@@ -102,6 +102,7 @@ end
 
 
 figure(1)
+subplot(3,1,1)
 plot(A,V1(:,1),A,V1(:,Y_n/2+0.5),A,V1(:,Y_n))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -109,7 +110,7 @@ ylabel('Value')
 title('Value Function')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(2)
+subplot(3,1,2)
 plot(A,c(:,1),A,c(:,Y_n/2+0.5),A,c(:,Y_n))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -117,7 +118,7 @@ ylabel('Consumption')
 title('Consumption')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(3)
+subplot(3,1,3)
 plot(A,a_prime(:,1),A,a_prime(:,Y_n/2+0.5),A,a_prime(:,Y_n))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -138,7 +139,7 @@ for t=1:sims
     a_sim(t+1)=a_prime(t,y_sim(t));
 end
 
-figure(4)
+figure(2)
 subplot(3,1,1)
 plot(sims/2+1:sims,exp(Y(y_sim(sims/2+1:sims))),sims/2+1:sims,ones(sims/2,1))
 xlabel('Time')
@@ -159,7 +160,7 @@ ylabel('Assets')
 [clgm,lags] = xcorr(y_sim,c_sim,4);
 
 %% (e) Plotting the Correlogram
-figure;
+figure(3)
 plot(lags,clgm);
 xlabel("lags")
 ylabel("Correlation Vector")
@@ -271,7 +272,8 @@ for ap=1:a_n
 end
 
 
-figure(1)
+figure(4)
+subplot(3,1,1)
 plot(A,V1(:,1),A,V1(:,3),A,V1(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -279,7 +281,7 @@ ylabel('Value')
 title('Value Function')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(2)
+subplot(3,1,2)
 plot(A,c(:,1),A,c(:,3),A,c(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -287,7 +289,7 @@ ylabel('Consumption')
 title('Consumption')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(3)
+subplot(3,1,3)
 plot(A,a_prime(:,1),A,a_prime(:,3),A,a_prime(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -308,7 +310,7 @@ for t=1:sims
     a_sim(t+1)=a_prime(t,y_sim(t));
 end
 
-figure(4)
+figure(5)
 subplot(3,1,1)
 plot(sims/2+1:sims,exp(Y(y_sim(sims/2+1:sims))),sims/2+1:sims,ones(sims/2,1))
 xlabel('Time')
@@ -329,7 +331,7 @@ ylabel('Assets')
 [clgm,lags] = xcorr(y_sim,c_sim,4);
 
 %% (e) Plotting the Correlogram
-figure;
+figure(6)
 plot(lags,clgm);
 xlabel("lags")
 ylabel("Correlation Vector")
@@ -442,7 +444,8 @@ for ap=1:a_n
 end
 
 
-figure(1)
+figure(7)
+subplot(3,1,1)
 plot(A,V1(:,1),A,V1(:,3),A,V1(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -450,7 +453,7 @@ ylabel('Value')
 title('Value Function')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(2)
+subplot(3,1,2)
 plot(A,c(:,1),A,c(:,3),A,c(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -458,7 +461,7 @@ ylabel('Consumption')
 title('Consumption')
 legend('Minimum Income','Steady State Income','High Income','location','southoutside','orientation','horizontal')
 
-figure(3)
+subplot(3,1,3)
 plot(A,a_prime(:,1),A,a_prime(:,3),A,a_prime(:,5))
 xlim([A(1) A(a_n)])
 xlabel('Assets')
@@ -479,7 +482,7 @@ for t=1:sims
     a_sim(t+1)=a_prime(t,y_sim(t));
 end
 
-figure(4)
+figure(8)
 subplot(3,1,1)
 plot(sims/2+1:sims,exp(Y(y_sim(sims/2+1:sims))),sims/2+1:sims,ones(sims/2,1))
 xlabel('Time')
@@ -500,7 +503,7 @@ ylabel('Assets')
 [clgm,lags] = xcorr(y_sim,c_sim,4);
 
 %% (e) Plotting the Correlogram
-figure;
+figure(9)
 plot(lags,clgm);
 xlabel("lags")
 ylabel("Correlation Vector")
